@@ -1,0 +1,277 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --soft-violet:hsl(273, 75%, 66%);
+  --soft-blue:hsl(240, 73%, 65%);
+  --text-color:hsl(238, 29%, 16%);
+  --text-color-variant:hsl(14, 88%, 65%);
+  --text-color2:hsl(237, 12%, 33%);
+  --text-color2-variant:hsl(240, 6%, 50%);
+  --divider:hsl(240, 5%, 91%);
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+}
+
+.container {
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--soft-violet)), to(var(--soft-blue)));
+  background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+  padding: 20vh 0px;
+}
+
+.card {
+  min-height: 65vh;
+  border-radius: 20px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 70vw;
+  max-width: 80vw;
+  width: auto;
+  margin: auto 5%;
+  position: relative;
+}
+
+.card .content {
+  margin: auto auto;
+  padding: 5% 5%;
+  min-width: 50%;
+}
+
+.card .content .head {
+  font-size: 2rem;
+}
+
+.card .content .accord {
+  font-size: 1rem;
+  margin: 3% 0%;
+  padding: 1% 0%;
+  border-bottom: 1px solid var(--divider);
+  color: var(--text-color2);
+}
+
+.card .content .accord .accord-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding-right: 10%;
+}
+
+.card .content .accord .accord-title .arrow {
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card .content .accord .accord-content {
+  margin: 1% 0%;
+  max-height: 0px;
+  overflow: hidden;
+  color: var(--text-color2-variant);
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.card .content .accord:hover {
+  cursor: pointer;
+}
+
+.card .content .accord:hover .accord-title {
+  font-weight: bolder;
+  color: var(--text-color-variant);
+}
+
+.card .content .accord:hover .accord-title .arrow {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+.card .content .accord:hover .accord-content {
+  max-height: 100px;
+}
+
+.card .card-img {
+  min-width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .card-img .compbg {
+  position: absolute;
+  top: -300px;
+  left: -600px;
+}
+
+.card .card-img .comp {
+  position: absolute;
+  top: 50px;
+  left: -75px;
+}
+
+.box {
+  position: absolute;
+  top: 170px;
+  left: -120px;
+  -webkit-animation: upanddown 1s infinite alternate forwards;
+          animation: upanddown 1s infinite alternate forwards;
+}
+
+.compmob {
+  display: none;
+}
+
+.compmobbg {
+  display: none;
+}
+
+@-webkit-keyframes upanddown {
+  0% {
+    top: 190px;
+  }
+  100% {
+    top: 160px;
+  }
+}
+
+@keyframes upanddown {
+  0% {
+    top: 190px;
+  }
+  100% {
+    top: 160px;
+  }
+}
+
+@media only screen and (max-device-width: 800px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+    padding: 0vh 0px;
+  }
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 40vw auto;
+  }
+  .card .content {
+    margin-bottom: 5vh;
+  }
+  .head {
+    text-align: center;
+  }
+  .box {
+    display: none;
+  }
+  .compbg {
+    display: none;
+  }
+  .comp {
+    display: none;
+  }
+  .compmob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    -webkit-transform: translate(-55%);
+            transform: translate(-55%);
+  }
+  .card-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .compmobbg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=main.css.map */
